@@ -1,3 +1,4 @@
+//Imported the model from schema js connscted to mongodb
 const { Room1, Room2  } = require("./Schema")
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -34,6 +35,7 @@ app.post('/api/v1/rooms', async (req, res) => {
     const hotelID = await hotel._id
 
 })
+//--------------------Search query to search for the maxPrice and minPrice---------//
 
 app.get(`/api/v1/rooms?search=searchRoomNameMatch&roomType=searchRoomTypeNameMatch
 &minPrice=searchRoomMinimumPriceMatch&maxPrice=searchRoomMaximumPriceMatch`, async (req, res) => {
