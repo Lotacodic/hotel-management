@@ -57,6 +57,8 @@ app.get(`/api/v1/rooms?search=searchRoomNameMatch&roomType=searchRoomTypeNameMat
   
 })
 
+//----------------------Updating room2 with roomId----------------------------------//
+
 app.patch('/api/v1/rooms/:roomId', async( req, res) => {
     const  roomId   = req.params.roomId
     
@@ -73,6 +75,8 @@ app.patch('/api/v1/rooms/:roomId', async( req, res) => {
 
 })
 
+//----------------------Deleting room2 with roomId------------------------------//
+
 app.delete('/api/v1/rooms/:roomId', async(req, res) => {
     const  roomId   = req.params.roomId
     try {
@@ -83,6 +87,7 @@ app.delete('/api/v1/rooms/:roomId', async(req, res) => {
     }
 })
 
+//--------------------------Getting a particular room by its Id----------------//
 app.get('/api/v1/rooms/roomId', async( req, res) => {
    try {
         const getParticularRoom = await Room2.findById(req.params.roomId)
